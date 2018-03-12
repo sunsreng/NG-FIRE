@@ -28,3 +28,22 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Command
 `ng new ng-fire -st`
+`ng generate module material --flat --module=app`
+`ng g m core -m app`
+`ng g m shared -m app`
+`npm install --save @angular/material @angular/cdk`
+`npm install --save @angular/animations`
+`ng g m auth -m core`
+`ng g c auth/signin`
+`ng g c auth/signup`
+`ng g c auth/reset-password`
+`ng g service core/auth -m core`
+`ng g m routing --flat -m app`
+``
+``
+``
+``
+``
+``
+``
+``
