@@ -1,22 +1,22 @@
-import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core';
 import {
   AngularFirestore,
   AngularFirestoreCollection,
   AngularFirestoreDocument
-} from 'angularfire2/firestore'
+} from 'angularfire2/firestore';
 
-import { Post } from './post.model'
+import { Post } from './post.model';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class PostService {
-  postsCollection: AngularFirestoreCollection<Post>
+  postsCollection: AngularFirestoreCollection<Post>;
   postDoc: AngularFirestoreDocument<Post>;
 
   constructor(private afs: AngularFirestore) {
     this.postsCollection = this.afs.collection('posts', ref =>
       ref.orderBy('published', 'desc').limit(10)
-    )
+    );
   }
 
   getPosts(): Observable<Post[]> {
@@ -30,24 +30,24 @@ export class PostService {
   }
 
   getPost(id: string) {
-    return this.afs.doc<Post>(`posts/${id}`)
+    return this.afs.doc<Post>(`posts/${id}`);
   }
   getPostData(id: string) {
-    this.postDoc = this.afs.doc<Post>(`posts/${id}`)
+    this.postDoc = this.afs.doc<Post>(`posts/${id}`);
     return this.postDoc.valueChanges();
   }
 
 
   create(data: Post) {
-    this.postsCollection.add(data)
+    this.postsCollection.add(data);
   }
-  
+
   delete(id: string) {
-    return this.getPost(id).delete()
+    return this.getPost(id).delete();
   }
 
   update(id: string, formData) {
-    return this.getPost(id).update(formData)
+    return this.getPost(id).update(formData);
   }
 
 }
