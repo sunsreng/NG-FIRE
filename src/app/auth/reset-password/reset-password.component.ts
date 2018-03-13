@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../core/auth.service';
 import { Router } from '@angular/router';
+
+import { AuthService } from '../../core/auth.service';
 
 @Component({
   selector: 'app-reset-password',
@@ -16,6 +17,6 @@ export class ResetPasswordComponent implements OnInit {
 
   resetPassword(email) {
     return this.auth.resetPassword(this.email)
-    .then(() => this.router.navigate(['/signin']))
+    .then(() => this.router.navigate(['/signin']));
   }
 }
