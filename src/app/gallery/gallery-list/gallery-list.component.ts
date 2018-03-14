@@ -13,7 +13,7 @@ export class GalleryListComponent implements OnInit {
   constructor(private galleryService: GalleryService) { }
 
   ngOnInit() {
-    this.getImages();
+    // this.getImages();
   }
 
   getImages() {

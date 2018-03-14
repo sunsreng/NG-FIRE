@@ -20,6 +20,7 @@ export class GalleryService {
     this.galleryCollection = this.afs.collection(`users/${uid}/gallery`);
     return this.galleryCollection.snapshotChanges().map(actions => {
       return actions.map(a => {
+        console.log(a);
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;
         return { id, ...data };
