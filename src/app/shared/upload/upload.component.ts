@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
 import { UploadService } from './upload.service';
 
 @Component({
@@ -21,7 +22,6 @@ export class UploadComponent implements OnInit {
     this.selection = event.target.files;
   }
 
-
   upload() {
     const file = this.selection[0];
     if (file.type.split('/')[0] === 'image') {
@@ -30,6 +30,5 @@ export class UploadComponent implements OnInit {
       console.log('image only pls');
     }
   }
-
 }
 

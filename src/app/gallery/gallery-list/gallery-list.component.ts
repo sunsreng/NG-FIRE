@@ -8,16 +8,16 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./gallery-list.component.css']
 })
 export class GalleryListComponent implements OnInit {
-  images: Observable<any[]>
+  images: Observable<any[]>;
 
   constructor(private galleryService: GalleryService) { }
 
   ngOnInit() {
-    this.getImages()
+    this.getImages();
   }
 
   getImages() {
-    this.images =  this.galleryService.getImages()
+    this.images =  this.galleryService.getImages();
   }
 
 }
